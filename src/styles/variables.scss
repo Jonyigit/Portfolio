@@ -1,0 +1,39 @@
+:root {
+    /* Backgrounds */
+    --bg-main: #0b0f14;
+    --bg-secondary: #121826;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --bg-card: linear-gradient(145deg, #121826, #0d111a);
+    --bg-glow: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1), transparent 70%);
+
+    /* Text */
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --text-glow: 0 0 20px rgba(99, 102, 241, 0.5);
+
+    /* Accent */
+    --accent: #8b5cf6;
+    --accent-hover: #a78bfa;
+    --accent-soft: rgba(139, 92, 246, 0.2);
+    --accent-glow: 0 0 25px rgba(139, 92, 246, 0.6);
+
+    /* Neon colors */
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #a855f7;
+
+    /* Borders */
+    --border-glow: 1px solid rgba(139, 92, 246, 0.3);
+    --border-hover: 1px solid rgba(139, 92, 246, 0.6);
+
+    /* Shadows */
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.4);
+    --shadow-neon: 0 0 20px rgba(0, 243, 255, 0.5);
+
+    /* Gradients */
+    --gradient-accent: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+    --gradient-neon: linear-gradient(90deg, #00f3ff, #a855f7, #ff00ff);
+    --gradient-dark: linear-gradient(145deg, #0b0f14, #1a1f2e);
+}
