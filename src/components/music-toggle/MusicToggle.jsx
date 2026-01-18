@@ -11,7 +11,6 @@ const MusicToggle = ({ onClose, isOpen }) => {
     const [songIndex, setSongIndex] = useState(0);
     const playerRef = useRef(null);
 
-    // Lofi musiqa playlisti
     const songs = [
         {
             id: 1,
@@ -22,25 +21,23 @@ const MusicToggle = ({ onClose, isOpen }) => {
         },
         {
             id: 2,
-            title: "Downtown Walk",
-            artist: "Lofi Type Beat",
-            src: "https://assets.mixkit.co/music/preview/mixkit-downtown-walk-208.mp3",
+            title: "VAZIO ETERNO",
+            artist: "Lumix Kxrsed Lxstfface",
+            src: "./src/assets/music/Vazio Ererno.mp3",
             color: "#8b5cf6",
         },
         {
             id: 3,
-            title: "Coffee Break",
-            artist: "Study Music",
-            src: "https://assets.mixkit.co/music/preview/mixkit-coffee-break-208.mp3",
+            title: "Montagem Danza (slowed)",
+            artist: "Dj Samir, Fyex, Dj Duda",
+            src: "./src/assets/music/Montagem Danza.mp3",
             color: "#a855f7",
         },
     ];
 
-    // Click outside to close
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (playerRef.current && !playerRef.current.contains(event.target)) {
-                // Faqat player tashqarisiga bosilsa yopiladi
                 const musicToggleBtn = document.querySelector(".musicToggleBtn");
                 if (!musicToggleBtn || !musicToggleBtn.contains(event.target)) {
                     onClose();
@@ -152,15 +149,12 @@ const MusicToggle = ({ onClose, isOpen }) => {
 
     return (
         <div ref={playerRef} className={`${styles.musicPlayer} ${!isOpen ? styles.hidden : ""}`}>
-            {/* Close button */}
             <button className={styles.closePlayer} onClick={handleClose} aria-label="Close player">
                 <FaTimes />
             </button>
 
-            {/* Audio elementi */}
             <audio ref={audioRef} src={songs[songIndex].src} preload="metadata" loop={false} />
 
-            {/* Progress bar va qo'shiq ma'lumotlari */}
             <div className={styles.playerInfo}>
                 <div className={styles.songInfo}>
                     <div className={styles.songTitle}>{songs[songIndex].title}</div>
@@ -195,7 +189,6 @@ const MusicToggle = ({ onClose, isOpen }) => {
                 </div>
             </div>
 
-            {/* Kontrollerlar */}
             <div className={styles.controls}>
                 <button className={styles.controlBtn} onClick={prevSong} aria-label="Previous song">
                     ⏮
@@ -222,7 +215,6 @@ const MusicToggle = ({ onClose, isOpen }) => {
                 </button>
             </div>
 
-            {/* Playlist ko'rsatish */}
             <div className={styles.playlist}>
                 <div className={styles.playlistTitle}>Playlist</div>
                 {songs.map((song, index) => (
