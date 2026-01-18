@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { FaHome, FaMusic, FaUser } from "react-icons/fa";
+import { FaHome, FaRobot, FaUser } from "react-icons/fa";
 
 import styles from "./footer.module.scss";
 
@@ -16,11 +16,11 @@ const Footer = ({ activeTab, setActiveTab }) => {
             description: "Portfolio & Skills",
         },
         {
-            id: "music",
-            label: "Music",
-            icon: FaMusic,
+            id: "ai",
+            label: "AI",
+            icon: FaRobot,
             color: "#a855f7",
-            description: "Player & Playlist",
+            description: "AI assistant",
         },
         {
             id: "profile",
