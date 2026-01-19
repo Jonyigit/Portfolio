@@ -5,40 +5,38 @@ import styles from "./home.module.scss";
 const Home = () => {
     const [activeCard, setActiveCard] = useState(null);
 
-    // Skills data - 3 ta card qilamiz
     const skills = [
         {
             id: 1,
             icon: "🎨",
-            title: "UI/UX Design",
-            description: "Modern, minimal designs. Figma expert",
+            title: "UI/UX Dizayner",
+            description: "Zamonaviy, minimal dizaynlar. Figma mutaxassisi",
             color: "#6366f1",
             gradient: "linear-gradient(135deg, #6366f1, #8b5cf6)",
-            projects: 12,
+            projects: 5,
         },
         {
             id: 2,
             icon: "⚛️",
             title: "React & Next.js",
-            description: "Interactive SPAs & PWAs",
+            description: "Interaktiv SPA va PWAlar",
             color: "#3b82f6",
             gradient: "linear-gradient(135deg, #3b82f6, #60a5fa)",
-            projects: 24,
+            projects: 36,
         },
         {
             id: 3,
             icon: "🎧",
-            title: "Music UI's",
-            description: "Audio players & visualizers",
+            title: "Musiqa interfeysi",
+            description: "Audio pleyerlar va vizualizatorlar",
             color: "#a855f7",
             gradient: "linear-gradient(135deg, #a855f7, #d946ef)",
             projects: 8,
         },
     ];
 
-    // Typewriter effect
     const [text, setText] = useState("");
-    const fullText = "Frontend Developer · UI Designer";
+    const fullText = "Frontend Dasturchi · Backend Dasturchi";
 
     useEffect(() => {
         let currentIndex = 0;
@@ -64,7 +62,6 @@ const Home = () => {
 
     return (
         <section className={styles.home}>
-            {/* Hero Section */}
             <div className={styles.hero}>
                 <motion.div
                     initial={{ scale: 0 }}
@@ -104,12 +101,11 @@ const Home = () => {
                     transition={{ delay: 0.6 }}
                     className={styles.description}
                 >
-                    I craft <span className={styles.highlight}>digital experiences</span> that blend minimal design with
-                    musical inspiration.
+                    Men <span className={styles.highlight}>raqamli tajribalarni </span> yarataman, ularni minimal dizayn
+                    va musiqa ilhomi bilan uyg‘unlashtiraman.
                 </motion.p>
             </div>
 
-            {/* Stats Section */}
             <motion.div
                 className={styles.stats}
                 initial={{ opacity: 0, y: 10 }}
@@ -118,23 +114,22 @@ const Home = () => {
             >
                 <div className={styles.statItem}>
                     <div className={styles.statValue}>
-                        24<span className={styles.statSuffix}>+</span>
+                        30<span className={styles.statSuffix}>+</span>
                     </div>
-                    <div className={styles.statLabel}>Projects</div>
+                    <div className={styles.statLabel}>Loyihalar</div>
                 </div>
                 <div className={styles.statItem}>
-                    <div className={styles.statValue}>18</div>
-                    <div className={styles.statLabel}>Clients</div>
+                    <div className={styles.statValue}>19</div>
+                    <div className={styles.statLabel}>Mijozlar</div>
                 </div>
                 <div className={styles.statItem}>
                     <div className={styles.statValue}>
-                        2<span className={styles.statSuffix}>yrs</span>
+                        3<span className={styles.statSuffix}>yil</span>
                     </div>
-                    <div className={styles.statLabel}>Experience</div>
+                    <div className={styles.statLabel}>Tajriba</div>
                 </div>
             </motion.div>
 
-            {/* Skills Cards */}
             <div className={styles.skillsSection}>
                 <motion.h3
                     initial={{ opacity: 0, x: -10 }}
@@ -143,7 +138,7 @@ const Home = () => {
                     className={styles.sectionTitle}
                 >
                     <span className={styles.titleIcon}>✨</span>
-                    Expertise
+                    mutaxassislik
                 </motion.h3>
 
                 <div className={styles.cards}>
@@ -166,7 +161,7 @@ const Home = () => {
                                 </div>
                                 <div className={styles.cardTitleWrapper}>
                                     <h4 className={styles.cardTitle}>{skill.title}</h4>
-                                    <div className={styles.projectsBadge}>{skill.projects}+ projects</div>
+                                    <div className={styles.projectsBadge}>{skill.projects}+ loyihalar</div>
                                 </div>
                             </div>
 
@@ -174,14 +169,13 @@ const Home = () => {
 
                             <div className={styles.cardFooter}>
                                 <div className={styles.tags}>
-                                    <span className={styles.tag}>Modern</span>
-                                    <span className={styles.tag}>Mobile</span>
-                                    <span className={styles.tag}>Interactive</span>
+                                    <span className={styles.tag}>Zamonaviy</span>
+                                    <span className={styles.tag}>Mobil</span>
+                                    <span className={styles.tag}>Interaktiv</span>
                                 </div>
                                 <div className={styles.expandBtn}>{activeCard === skill.id ? "−" : "+"}</div>
                             </div>
 
-                            {/* Expanded content */}
                             {activeCard === skill.id && (
                                 <motion.div
                                     initial={{ opacity: 0, height: 0 }}
@@ -197,7 +191,7 @@ const Home = () => {
                                             <span>TypeScript</span>
                                         </div>
                                     </div>
-                                    <button className={styles.viewProjectsBtn}>View Projects →</button>
+                                    <button className={styles.viewProjectsBtn}>Loyihalarni ko'rish →</button>
                                 </motion.div>
                             )}
                         </motion.div>
@@ -205,7 +199,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* CTA Section */}
             <motion.div
                 className={styles.cta}
                 initial={{ opacity: 0 }}
@@ -213,16 +206,16 @@ const Home = () => {
                 transition={{ delay: 1.5 }}
             >
                 <div className={styles.ctaContent}>
-                    <h3 className={styles.ctaTitle}>Let's Create Together</h3>
+                    <h3 className={styles.ctaTitle}>Keling, birgalikda yaratamiz</h3>
                     <p className={styles.ctaDescription}>
-                        Have a project? Let's bring your ideas to life with beautiful design.
+                        Loyihangiz bormi? G‘oyangizni chiroyli dizayn bilan hayotga tatbiq qilaylik.
                     </p>
                     <div className={styles.ctaButtons}>
                         <motion.button className={styles.primaryBtn} whileTap={{ scale: 0.95 }}>
-                            ✨ Get In Touch
+                            ✨ Bog'laning
                         </motion.button>
                         <motion.button className={styles.secondaryBtn} whileTap={{ scale: 0.95 }}>
-                            🎧 My Playlist
+                            🎧 Mening pleylistim
                         </motion.button>
                     </div>
                 </div>

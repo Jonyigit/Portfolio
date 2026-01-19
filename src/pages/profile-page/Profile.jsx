@@ -18,15 +18,15 @@ const Profile = () => {
         {
             id: 2,
             icon: <FaPalette />,
-            title: "UI/UX Design",
+            title: "UI/UX Dizayner",
             level: 85,
             color: "#8b5cf6",
-            tags: ["Figma", "Adobe XD", "Prototype"],
+            tags: ["Figma", "Capcut", "Prototype"],
         },
         {
             id: 3,
             icon: <FaMobileAlt />,
-            title: "Mobile First",
+            title: "Mobil birinchi yondashuv",
             level: 95,
             color: "#3b82f6",
             tags: ["PWA", "Responsive", "Touch"],
@@ -38,7 +38,7 @@ const Profile = () => {
             platform: "GitHub",
             icon: <FaGithub />,
             username: "@jonyigit",
-            url: "#",
+            url: "https://github.com/Jonyigit",
             color: "#ffffff",
         },
         {
@@ -52,14 +52,13 @@ const Profile = () => {
             platform: "Telegram",
             icon: <FaTelegram />,
             username: "@jonyigit",
-            url: "#",
+            url: "https://t.me/jonyigit",
             color: "#26a5e4",
         },
     ];
 
     return (
         <section className={styles.profile}>
-            {/* Hero Section */}
             <motion.div className={styles.hero} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                 <div className={styles.avatarContainer}>
                     <div className={styles.avatar}>
@@ -67,39 +66,37 @@ const Profile = () => {
                     </div>
                     <div className={styles.heroText}>
                         <h1 className={styles.name}>Jonyigit Avazbekov</h1>
-                        <p className={styles.title}>Frontend Developer</p>
+                        <p className={styles.title}>Frontend Dasturchi</p>
                     </div>
                 </div>
 
                 <p className={styles.bio}>
-                    I create <span className={styles.highlight}>digital experiences</span>
-                    with React & modern UI. Passionate about clean code and music-inspired designs.
+                    Men React va zamonaviy UI bilan <span className={styles.highlight}>raqamli tajribalarni</span>
+                    yarataman. Toza kod va musiqa ilhomlangan dizaynlarga ishtiyoqmandman
                 </p>
             </motion.div>
 
-            {/* Stats */}
             <div className={styles.stats}>
                 <div className={styles.statItem}>
-                    <div className={styles.statNumber}>24+</div>
-                    <div className={styles.statLabel}>Projects</div>
+                    <div className={styles.statNumber}>30+</div>
+                    <div className={styles.statLabel}>Loyihalar</div>
                 </div>
                 <div className={styles.statDivider}></div>
                 <div className={styles.statItem}>
-                    <div className={styles.statNumber}>2+</div>
-                    <div className={styles.statLabel}>Years</div>
+                    <div className={styles.statNumber}>3+</div>
+                    <div className={styles.statLabel}>Yillar</div>
                 </div>
                 <div className={styles.statDivider}></div>
                 <div className={styles.statItem}>
-                    <div className={styles.statNumber}>18+</div>
-                    <div className={styles.statLabel}>Clients</div>
+                    <div className={styles.statNumber}>15+</div>
+                    <div className={styles.statLabel}>Mijozlar</div>
                 </div>
             </div>
 
-            {/* Skills */}
             <div className={styles.skills}>
                 <h2 className={styles.sectionTitle}>
                     <span className={styles.titleIcon}>✨</span>
-                    Skills
+                    Mahoratlar
                 </h2>
 
                 <div className={styles.skillsList}>
@@ -149,11 +146,10 @@ const Profile = () => {
                 </div>
             </div>
 
-            {/* Contact */}
             <div className={styles.contact}>
                 <h2 className={styles.sectionTitle}>
                     <span className={styles.titleIcon}>📱</span>
-                    Connect
+                    Aloqa
                 </h2>
 
                 <div className={styles.socialLinks}>

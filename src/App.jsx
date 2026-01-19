@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoMdMusicalNotes } from "react-icons/io";
-import { FaRobot } from "react-icons/fa"; // AI uchun icon qo'shamiz
 
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
 import MusicToggle from "./components/music-toggle/MusicToggle";
 import Home from "./pages/home-page/Home";
-import AI from "./pages/ai-page/AI"; // Music o'rniga AI import
+import AI from "./pages/ai-page/AI";
 import Profile from "./pages/profile-page/Profile";
 
 import "./styles/global.scss";
@@ -15,7 +14,7 @@ import "./styles/variables.scss";
 
 const App = () => {
     const [activeTab, setActiveTab] = useState("home");
-    const [showPlayer, setShowPlayer] = useState(true);
+    const [showPlayer, setShowPlayer] = useState(false);
 
     useEffect(() => {
         const starsContainer = document.querySelector(".stars");
@@ -89,7 +88,7 @@ const App = () => {
                                 <Home />
                             </motion.div>
                         )}
-                        {activeTab === "ai" && ( // Music o'rniga AI
+                        {activeTab === "ai" && (
                             <motion.div
                                 key="ai"
                                 initial={{ opacity: 0, x: 20 }}

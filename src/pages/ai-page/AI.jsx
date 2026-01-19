@@ -4,10 +4,7 @@ import {
     FaRobot,
     FaUser,
     FaPaperPlane,
-    FaStar,
-    FaBriefcase,
     FaCode,
-    FaGamepad,
     FaTimes,
     FaSpinner,
     FaLightbulb,
@@ -26,17 +23,16 @@ const AI = () => {
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
 
-    // FAQ Categories - useMemo bilan optimizatsiya
     const faqCategories = useMemo(
         () => ({
             general: {
                 icon: "⭐",
-                title: "General",
+                title: "Asosiy",
                 color: "#6366f1",
                 questions: [
-                    { id: 1, question: "Tell me about yourself", emoji: "👋" },
-                    { id: 2, question: "What's your tech stack?", emoji: "⚛️" },
-                    { id: 3, question: "Available for work?", emoji: "💼" },
+                    { id: 1, question: "O‘zingiz haqingizda gapiring", emoji: "👋" },
+                    { id: 2, question: "Sizning texnologiyalar to‘plamingiz", emoji: "⚛️" },
+                    { id: 3, question: "Ishlashga tayyormisiz?", emoji: "💼" },
                 ],
             },
             portfolio: {
@@ -44,76 +40,71 @@ const AI = () => {
                 title: "Portfolio",
                 color: "#8b5cf6",
                 questions: [
-                    { id: 4, question: "Show your projects", emoji: "🚀" },
-                    { id: 5, question: "Design style?", emoji: "🎨" },
-                    { id: 6, question: "Best project?", emoji: "💎" },
+                    { id: 4, question: "Loyihalaringizni ko'rsating", emoji: "🚀" },
+                    { id: 5, question: "Dizayn uslubingiz qanday?", emoji: "🎨" },
+                    { id: 6, question: "Eng yaxshi loyihangiz qaysi?", emoji: "💎" },
                 ],
             },
             skills: {
                 icon: "💻",
-                title: "Skills",
+                title: "Ko'nikmalar",
                 color: "#3b82f6",
                 questions: [
-                    { id: 7, question: "Frontend expertise?", emoji: "🔧" },
-                    { id: 8, question: "UI/UX skills?", emoji: "🎯" },
-                    { id: 9, question: "Soft skills?", emoji: "✨" },
+                    { id: 7, question: "Frontend tajriba", emoji: "🔧" },
+                    { id: 8, question: "UI/UX ko'nikmalar?", emoji: "🎯" },
+                    { id: 9, question: "Shaxsiy ko'nikmalar", emoji: "✨" },
                 ],
             },
             fun: {
                 icon: "🎮",
-                title: "Fun Facts",
+                title: "Qiziqarli faktlar",
                 color: "#a855f7",
                 questions: [
-                    { id: 10, question: "Music inspiration?", emoji: "🎧" },
-                    { id: 11, question: "Hobbies?", emoji: "🎸" },
-                    { id: 12, question: "Favorite gadget?", emoji: "⌨️" },
+                    { id: 10, question: "Musiqadan ilhom?", emoji: "🎧" },
+                    { id: 11, question: "Hobbilar?", emoji: "🎸" },
+                    { id: 12, question: "Sevimli gadjetingiz qaysi?", emoji: "⌨️" },
                 ],
             },
         }),
         [],
     );
 
-    // Answers mapping
     const answers = useMemo(
         () => ({
-            1: "I'm Jonyigit Avazbekov, a passionate Frontend Developer with 2+ years of experience. I specialize in creating modern, interactive UIs with React and SCSS. I love blending design with technology to create beautiful digital experiences.",
-            2: "My main stack includes React, Next.js, TypeScript, SCSS, and Figma for design. I also work with Framer Motion for animations, Git for version control, and various UI libraries.",
-            3: "Yes! I'm currently open to new opportunities. Feel free to contact me for freelance projects, full-time positions, or collaborations.",
-            4: "I've worked on 24+ projects including e-commerce sites, music players, admin dashboards, and portfolio websites. Most feature modern UI/UX, animations, and responsive design.",
-            5: "I love minimal, modern design with music-inspired elements. Glassmorphism, gradients, and smooth animations are my signature style.",
-            6: "My music player portfolio is my favorite. It combines my love for music with modern UI design, featuring audio visualization, animations, and interactive elements.",
-            7: "React hooks, state management, custom hooks, component architecture, performance optimization, responsive design, and accessibility.",
-            8: "Figma prototyping, user research, wireframing, design systems, animation design, and creating intuitive user interfaces.",
-            9: "Problem-solving, communication, teamwork, time management, adaptability, and attention to detail.",
-            10: "Yes! I design while listening to lofi, synthwave, and chillhop. Music influences my design rhythm.",
-            11: "Playing guitar, discovering new music, digital art, gaming, and exploring UI trends.",
-            12: "My mechanical keyboard with custom keycaps! The tactile feedback helps me code better.",
+            1: "Men Jonyigit Avazbekov, 2+ yillik tajribaga ega ishtiyoqli Frontend developer. React va SCSS bilan zamonaviy, interaktiv foydalanuvchi interfeyslarini yaratishga ixtisoslashganman. Men dizayn va texnologiyani uyg‘unlashtirib, chiroyli raqamli tajribalar yaratishni yaxshi ko‘raman.",
+            2: "Mening asosiy texnologiyalarim React, Next.js, TypeScript, SCSS va dizayn uchun Figma. Shuningdek, animatsiyalar uchun Framer Motion, versiyalarni boshqarish uchun Git va turli UI kutubxonalar bilan ishlayman.",
+            3: "Ha! Hozirda yangi imkoniyatlarga ochiqman. Freelance loyihalar, to‘liq stavkada ish yoki hamkorlik uchun bemalol bog‘laning",
+            4: "Men 30+ loyihada ishladim, jumladan e-commerce saytlar, musiqa pleerlar, admin panel va portfolio saytlar. Ko‘pchiligi zamonaviy UI/UX, animatsiyalar va responsiv dizaynni o‘z ichiga oladi.",
+            5: "Men minimal, zamonaviy va musiqadan ilhomlangan dizaynlarni yaxshi ko‘raman. Glassmorphism, gradientlar va silliq animatsiyalar mening imzo uslubimdir.",
+            6: "Mening eng sevimli loyiham — musiqa pleer portfoliom. U musiqaga bo‘lgan sevgimni zamonaviy UI dizayn bilan uyg‘unlashtiradi, audio vizualizatsiya, animatsiyalar va interaktiv elementlarga ega.",
+            7: "React hooks, state management, custom hooks, komponent arxitekturasi, ishlash tezligini optimizatsiya qilish, responsiv dizayn va accessibility bo‘yicha mutaxassislik.",
+            8: "Figma prototiplash, foydalanuvchi tadqiqotlari, wireframing, dizayn tizimlari, animatsiya dizayni va intuitiv foydalanuvchi interfeyslarini yaratish bo‘yicha mutaxassislik.",
+            9: "Muammolarni hal qilish, muloqot, jamoada ishlash, vaqtni boshqarish, moslashuvchanlik va detallarga e’tibor.",
+            10: "Ha! Men phonk, pianina va musiqa tinglayotgan paytimda dizayn qilaman. Musiqa mening dizayn ritmimga ilhom beradi",
+            11: "Gitarada chalish, yangi musiqalarni kashf etish, raqamli san’at, o‘yin o‘ynash va UI trendlarini o‘rganish.",
+            12: "Mening mexanik klaviaturam, maxsus tugmalar bilan! Tegish hissi (tactile feedback) menga kod yozishni yaxshiroq qilishga yordam beradi.",
         }),
         [],
     );
 
-    // Initial greeting
     useEffect(() => {
         const welcomeMsg = {
             id: 1,
-            text: "Hello! I'm Jonyigit's AI assistant. Ask me anything about his work, skills, or just have a chat! 👋",
+            text: "Salom! Men Jonyigitning sun’iy intellekt yordamchisiman. Uning ishlari, ko‘nikmalari haqida so‘rashingiz mumkin 👋",
             sender: "ai",
             timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
         };
         setMessages([welcomeMsg]);
     }, []);
 
-    // Auto scroll
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
-    // Handle question click
     const handleQuestionClick = useCallback(
         (question) => {
             setSelectedQuestion(question);
 
-            // Add user message
             const userMsg = {
                 id: Date.now(),
                 text: question.question,
@@ -125,10 +116,9 @@ const AI = () => {
             setIsLoading(true);
             setIsTyping(true);
 
-            // Simulate typing
             setTimeout(
                 () => {
-                    const answer = answers[question.id] || "I don't have an answer for that yet.";
+                    const answer = answers[question.id] || "Hozircha bu savolga javobim yo'q.";
 
                     const aiMsg = {
                         id: Date.now() + 1,
@@ -147,7 +137,6 @@ const AI = () => {
         [answers],
     );
 
-    // Send message
     const handleSendMessage = useCallback(() => {
         if (!inputText.trim() || isLoading) return;
 
@@ -163,19 +152,18 @@ const AI = () => {
         setIsLoading(true);
         setIsTyping(true);
 
-        // Find answer or give generic response
         setTimeout(() => {
             const query = inputText.toLowerCase();
             let response = "";
 
-            // Check keywords
-            if (query.includes("hello") || query.includes("hi") || query.includes("hey")) {
-                response = "Hello there! 👋 How can I help you today?";
-            } else if (query.includes("thank")) {
-                response = "You're welcome! 😊 Is there anything else you'd like to know?";
-            } else if (query.includes("contact") || query.includes("email")) {
-                response = "Contact me at hello@jonyigit.com or through social media links in my profile!";
-            } else if (query.includes("experience") || query.includes("years")) {
+            if (query.includes("hello") || query.includes("nima gap") || query.includes("salom")) {
+                response = "Salom! 👋 Bugun sizga qanday yordam bera olaman?";
+            } else if (query.includes("thank") || query.includes("raxmat")) {
+                response = "Sizga yordam bera olganimdan xursandman 😊";
+            } else if (query.includes("aloqa") || query.includes("qanday aloqaga chiqsam bo'ladi")) {
+                response =
+                    "Menga @jonyigit telegram manziliga yoki profilimdagi ijtimoiy tarmoqlar havolalari orqali bog‘laning!";
+            } else if (query.includes("tajriba") || query.includes("necha yil tajribaga ega")) {
                 response = "I have 2+ years of professional experience working on various web projects.";
             } else {
                 const responses = [
@@ -200,7 +188,6 @@ const AI = () => {
         }, 1000);
     }, [inputText, isLoading]);
 
-    // Key press handler
     const handleKeyPress = useCallback(
         (e) => {
             if (e.key === "Enter" && !e.shiftKey && !isLoading) {
@@ -211,7 +198,6 @@ const AI = () => {
         [handleSendMessage, isLoading],
     );
 
-    // Clear chat
     const handleClearChat = useCallback(() => {
         setMessages([
             {
@@ -231,7 +217,6 @@ const AI = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            {/* Header */}
             <div className={styles.header}>
                 <motion.div
                     className={styles.aiAvatar}
@@ -249,8 +234,8 @@ const AI = () => {
                 </motion.div>
 
                 <div className={styles.headerInfo}>
-                    <h1 className={styles.title}>AI Assistant</h1>
-                    <p className={styles.subtitle}>Ask about Jonyigit's work & skills</p>
+                    <h1 className={styles.title}>AI Yordamchi</h1>
+                    <p className={styles.subtitle}>Jonyigit haqida so'rang</p>
                 </div>
 
                 <motion.button
@@ -259,11 +244,10 @@ const AI = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    Clear
+                    Tozalash
                 </motion.button>
             </div>
 
-            {/* Chat Messages */}
             <div className={styles.chatArea}>
                 <div className={styles.messagesWrapper}>
                     {messages.map((msg) => (
@@ -282,7 +266,6 @@ const AI = () => {
                         </motion.div>
                     ))}
 
-                    {/* Typing indicator */}
                     {isTyping && (
                         <motion.div
                             className={`${styles.message} ${styles.ai}`}
@@ -305,7 +288,6 @@ const AI = () => {
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* Input Field */}
                 <div className={styles.inputSection}>
                     <div className={styles.inputWrapper}>
                         <input
@@ -314,7 +296,7 @@ const AI = () => {
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             onKeyPress={handleKeyPress}
-                            placeholder="Ask me anything..."
+                            placeholder="Jonyigit haqida so'rang..."
                             className={styles.input}
                             disabled={isLoading}
                         />
@@ -334,14 +316,12 @@ const AI = () => {
                 </div>
             </div>
 
-            {/* Quick Questions */}
             <div className={styles.questionsSection}>
                 <div className={styles.sectionHeader}>
                     <FaLightbulb className={styles.sectionIcon} />
-                    <h3 className={styles.sectionTitle}>Quick Questions</h3>
+                    <h3 className={styles.sectionTitle}>Qisqa savollar</h3>
                 </div>
 
-                {/* Category Tabs */}
                 <div className={styles.categoryTabs}>
                     {Object.entries(faqCategories).map(([key, category]) => (
                         <motion.button
@@ -360,7 +340,6 @@ const AI = () => {
                     ))}
                 </div>
 
-                {/* Questions Grid */}
                 <div className={styles.questionsGrid}>
                     {faqCategories[activeCategory].questions.map((q) => (
                         <motion.div
@@ -384,7 +363,6 @@ const AI = () => {
                 </div>
             </div>
 
-            {/* Selected Answer Preview */}
             <AnimatePresence>
                 {selectedQuestion && (
                     <motion.div
@@ -408,15 +386,14 @@ const AI = () => {
                 )}
             </AnimatePresence>
 
-            {/* Tips */}
             <div className={styles.tips}>
                 <div className={styles.tip}>
                     <FaMagic className={styles.tipIcon} />
-                    <span>Click questions for instant answers</span>
+                    <span>Tezkor javoblar uchun savollarga bosing</span>
                 </div>
                 <div className={styles.tip}>
                     <FaCode className={styles.tipIcon} />
-                    <span>Ask about specific technologies</span>
+                    <span>Aniq texnologiyalar haqida so‘rang</span>
                 </div>
             </div>
         </motion.div>

@@ -10,31 +10,30 @@ const Footer = ({ activeTab, setActiveTab }) => {
     const menuItems = [
         {
             id: "home",
-            label: "Home",
+            label: "Uy",
             icon: FaHome,
             color: "#6366f1",
-            description: "Portfolio & Skills",
+            description: "Portfolio & Ko'nikmalar",
         },
         {
             id: "ai",
             label: "AI",
             icon: FaRobot,
             color: "#a855f7",
-            description: "AI assistant",
+            description: "AI yordamchi",
         },
         {
             id: "profile",
-            label: "Profile",
+            label: "Shaxsiy",
             icon: FaUser,
             color: "#3b82f6",
-            description: "About & Contact",
+            description: "Haqida & Aloqa",
         },
     ];
 
     const handleItemClick = (tabId, index) => {
         setActiveTab(tabId);
 
-        // Ripple effect
         const button = buttonsRef.current[index];
         if (button) {
             const ripple = document.createElement("span");
@@ -63,10 +62,8 @@ const Footer = ({ activeTab, setActiveTab }) => {
 
     return (
         <footer className={styles.footer}>
-            {/* Glass Background */}
             <div className={styles.glassBackground}></div>
 
-            {/* Navigation Bar */}
             <nav className={styles.navBar}>
                 {menuItems.map((item, index) => {
                     const Icon = item.icon;
@@ -85,11 +82,9 @@ const Footer = ({ activeTab, setActiveTab }) => {
                                 "--active-color": item.color,
                             }}
                         >
-                            {/* Icon Container */}
                             <div className={styles.iconContainer}>
                                 <Icon className={styles.icon} />
 
-                                {/* Active Glow Effect */}
                                 {isActive && (
                                     <>
                                         <motion.div
@@ -113,7 +108,6 @@ const Footer = ({ activeTab, setActiveTab }) => {
                                 )}
                             </div>
 
-                            {/* Label */}
                             <motion.span
                                 className={styles.label}
                                 animate={{
@@ -125,7 +119,6 @@ const Footer = ({ activeTab, setActiveTab }) => {
                                 {item.label}
                             </motion.span>
 
-                            {/* Active Indicator */}
                             {isActive && (
                                 <motion.div
                                     className={styles.activeIndicator}
@@ -134,17 +127,14 @@ const Footer = ({ activeTab, setActiveTab }) => {
                                 />
                             )}
 
-                            {/* Tooltip (only on hover) */}
                             <div className={styles.tooltip}>{item.description}</div>
                         </motion.button>
                     );
                 })}
             </nav>
 
-            {/* Top Border */}
             <div className={styles.topBorder}></div>
 
-            {/* Music Visualizer (only on music tab) */}
             {activeTab === "music" && (
                 <div className={styles.visualizer}>
                     {[...Array(8)].map((_, i) => (

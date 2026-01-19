@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import photo from "../../assets/images/my-photo.jpg";
+
 import styles from "./header.module.scss";
 
 const Header = () => {
@@ -8,12 +10,11 @@ const Header = () => {
     const [battery, setBattery] = useState("100%");
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
     const [socialStats, setSocialStats] = useState({
-        followers: "2.4k",
-        projects: "24",
-        experience: "2y",
+        followers: "10.2k",
+        projects: "15",
+        experience: "3y",
     });
 
-    // Real time ko'rsatish
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();
@@ -28,10 +29,9 @@ const Header = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Battery simulation
     useEffect(() => {
         const updateBattery = () => {
-            const randomBattery = Math.floor(Math.random() * 21) + 80; // 80-100%
+            const randomBattery = Math.floor(Math.random() * 21) + 80;
             setBattery(`${randomBattery}%`);
         };
 
@@ -41,13 +41,12 @@ const Header = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Social stats animation
     useEffect(() => {
         const timer = setTimeout(() => {
             setSocialStats({
-                followers: "2.5k",
-                projects: "25",
-                experience: "2y",
+                followers: "10.2k",
+                projects: "15",
+                experience: "3y",
             });
         }, 2000);
 
@@ -62,7 +61,6 @@ const Header = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, type: "spring" }}
             >
-                {/* Status Bar */}
                 <div className={styles.statusBar}>
                     <div className={styles.time}>{time}</div>
                     <div className={styles.statusIcons}>
@@ -80,7 +78,6 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* Dynamic Dots */}
                 <div className={styles.dynamicDots}>
                     <motion.span
                         className={styles.dot}
@@ -99,9 +96,7 @@ const Header = () => {
                     />
                 </div>
 
-                {/* Main Content */}
                 <div className={styles.content}>
-                    {/* Animated Avatar */}
                     <motion.div
                         className={styles.avatarContainer}
                         onMouseEnter={() => setIsAvatarHovered(true)}
@@ -119,14 +114,13 @@ const Header = () => {
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                         >
-                                            👁️ View
+                                            👁️ Ko'rish
                                         </motion.div>
                                     )}
                                 </div>
                             </div>
                         </div>
 
-                        {/* Orbit Circles */}
                         <motion.div
                             className={styles.orbitCircle}
                             animate={{ rotate: 360 }}
@@ -143,7 +137,6 @@ const Header = () => {
                         </motion.div>
                     </motion.div>
 
-                    {/* Name with Gradient */}
                     <motion.h1
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -160,7 +153,6 @@ const Header = () => {
                         </motion.span>
                     </motion.h1>
 
-                    {/* Title with typing effect */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -168,15 +160,14 @@ const Header = () => {
                         className={styles.titleContainer}
                     >
                         <div className={styles.title}>
-                            <span className={styles.titleText}>Frontend Developer</span>
+                            <span className={styles.titleText}>Frontend Dasturchi</span>
                             <span className={styles.titleDivider}>·</span>
-                            <span className={styles.titleText}>UI/UX Designer</span>
+                            <span className={styles.titleText}>UI/UX Dizayner</span>
                             <span className={styles.titleDivider}>·</span>
-                            <span className={styles.titleText}>Music Producer</span>
+                            <span className={styles.titleText}>Backend Dasturchi</span>
                         </div>
                     </motion.div>
 
-                    {/* Social Stats */}
                     <motion.div
                         className={styles.socialStats}
                         initial={{ opacity: 0, y: 10 }}
@@ -187,7 +178,7 @@ const Header = () => {
                             <div className={styles.statIcon}>👥</div>
                             <div className={styles.statContent}>
                                 <div className={styles.statValue}>{socialStats.followers}</div>
-                                <div className={styles.statLabel}>Followers</div>
+                                <div className={styles.statLabel}>Obunachi</div>
                             </div>
                         </div>
                         <div className={styles.statDivider}></div>
@@ -195,7 +186,7 @@ const Header = () => {
                             <div className={styles.statIcon}>🚀</div>
                             <div className={styles.statContent}>
                                 <div className={styles.statValue}>{socialStats.projects}</div>
-                                <div className={styles.statLabel}>Projects</div>
+                                <div className={styles.statLabel}>Loyihalar</div>
                             </div>
                         </div>
                         <div className={styles.statDivider}></div>
@@ -203,12 +194,11 @@ const Header = () => {
                             <div className={styles.statIcon}>⏳</div>
                             <div className={styles.statContent}>
                                 <div className={styles.statValue}>{socialStats.experience}</div>
-                                <div className={styles.statLabel}>Experience</div>
+                                <div className={styles.statLabel}>Tajriba</div>
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Status Indicator */}
                     <motion.div
                         className={styles.statusIndicator}
                         initial={{ opacity: 0, scale: 0 }}
@@ -216,11 +206,10 @@ const Header = () => {
                         transition={{ delay: 0.6, type: "spring" }}
                     >
                         <div className={styles.statusDot}></div>
-                        <span className={styles.statusText}>Available for work</span>
+                        <span className={styles.statusText}>Ishga tayyor</span>
                     </motion.div>
                 </div>
 
-                {/* Bottom Navigation */}
                 <div className={styles.bottomNav}>
                     <motion.div className={styles.navItem} whileHover={{ y: -5 }} whileTap={{ scale: 0.95 }}>
                         <span className={styles.navIcon}>💼</span>
@@ -237,7 +226,6 @@ const Header = () => {
                 </div>
             </motion.div>
 
-            {/* Floating Particles */}
             <div className={styles.floatingElements}>
                 {[...Array(8)].map((_, i) => (
                     <motion.div

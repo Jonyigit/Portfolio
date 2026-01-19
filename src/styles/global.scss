@@ -20,6 +20,11 @@ body {
     position: relative;
 }
 
+button,
+input {
+    font-family: inherit;
+}
+
 /* 1. VISIBLE MAIN GRADIENT BACKGROUND */
 body::before {
     content: "";
